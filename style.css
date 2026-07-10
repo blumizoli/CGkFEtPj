@@ -1,0 +1,679 @@
+* {
+
+    box-sizing:border-box;
+
+    image-rendering:pixelated;
+
+}
+
+
+
+html,
+body {
+
+
+    margin:0;
+
+    padding:0;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    overflow:hidden;
+
+
+    background:#111;
+
+
+    font-family:
+    "Press Start 2P",
+    monospace;
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ JÁTÉKABLAK
+========================
+*/
+
+
+#game {
+
+
+    width:1200px;
+
+    height:800px;
+
+
+    position:absolute;
+
+
+    left:50%;
+
+    top:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+
+    overflow:hidden;
+
+
+    border:8px solid black;
+
+
+    background:black;
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ VILÁG
+========================
+*/
+
+
+#world {
+
+
+    position:absolute;
+
+
+    width:1200px;
+
+    height:800px;
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ IKONOK
+========================
+*/
+
+
+#topbar {
+
+
+    position:absolute;
+
+
+    z-index:50;
+
+
+    width:100%;
+
+
+    top:40px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+#level-icons {
+
+
+    display:none;
+
+
+    justify-content:center;
+
+
+    gap:12px;
+
+
+}
+
+
+
+
+.level-icon {
+
+
+    width:95px;
+
+    height:95px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:#900;
+
+
+    border-radius:8px;
+
+
+}
+
+
+
+.level-icon.done {
+
+
+    background:#008000;
+
+
+}
+
+
+
+.level-icon img {
+
+
+    width:85px;
+
+    height:85px;
+
+
+    object-fit:contain;
+
+
+    filter:none;
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ SZÖVEGEK
+========================
+*/
+
+
+
+
+
+#counter {
+
+    margin-top:40px;
+
+    color:white;
+
+    font-size:40px;
+
+    text-shadow:
+        3px 3px #000,
+       -3px 3px #000,
+        3px -3px #000,
+       -3px -3px #000;
+
+}
+
+
+
+
+
+
+
+/*
+========================
+ KARAKTER
+========================
+*/
+
+
+#player {
+
+
+    position:absolute;
+
+
+    width:120px;
+
+    height:160px;
+
+
+    left:500px;
+
+    top:600px;
+
+
+    z-index:20;
+
+
+}
+
+
+
+
+#body {
+
+
+    position:absolute;
+
+
+    width:120px;
+
+    height:160px;
+
+
+
+    background-image:
+
+    url("assets/figure/walk.png");
+
+
+
+    background-size:
+
+    720px 1280px;
+
+
+
+    background-repeat:no-repeat;
+
+
+
+}
+
+
+
+#head {
+    position:absolute;
+    width:50px;
+    height:auto; /* A 'autopx' helyett 'auto' a helyes szintaktika */
+    left:35px;   /* Módosítva a középre igazításhoz */
+    top:0px;
+    z-index:5;
+}
+
+
+
+
+
+
+
+/*
+========================
+ TÁRGYAK
+========================
+*/
+
+
+#objects {
+
+
+    position:absolute;
+
+
+    width:100%;
+
+    height:100%;
+
+
+}
+
+
+
+
+.falling {
+
+
+    position:absolute;
+
+
+    font-size:55px;
+
+
+    z-index:10;
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ POPUP
+========================
+*/
+
+
+#popup {
+
+
+    position:absolute;
+
+
+    z-index:100;
+
+
+    width:800px;
+
+
+    left:50%;
+
+    top:50%;
+
+
+
+    transform:
+
+    translate(-50%,-50%)
+
+    scale(0);
+
+
+
+    background:
+
+    rgba(0,0,0,.9);
+
+
+
+    color:white;
+
+
+    border:5px solid white;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+    font-size:22px;
+
+
+    line-height:1.6;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+#popup.show {
+
+
+    transform:
+
+    translate(-50%,-50%)
+
+    scale(1);
+
+
+}
+
+
+
+
+
+
+
+
+/*
+========================
+ FADE
+========================
+*/
+
+
+#fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 999; /* Biztosan a legfelső réteg legyen */
+    opacity: 0;
+    pointer-events: none; /* Alaphelyzetben ne akadályozza a kattintást */
+    transition: opacity 1s ease; /* Határozzuk meg pontosan az átmenetet */
+}
+
+#fade.active {
+    opacity: 1;
+    pointer-events: auto; /* Amikor aktív, már blokkolhatja az eseményeket */
+}
+
+
+
+
+
+
+
+/*
+========================
+ VÉGJÁTÉK
+========================
+*/
+
+
+#ending {
+
+
+    position:absolute;
+
+
+    z-index:300;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    background:black;
+
+
+    display:none;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    flex-direction:column;
+
+
+    text-align:center;
+
+
+}
+
+
+
+#birthday-message {
+
+
+    color:white;
+
+
+    font-size:32px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+#continue-text {
+
+
+    margin-top:80px;
+
+
+    color:#00ff00;
+
+
+    font-family:
+
+    "Courier New",
+    monospace;
+
+
+    font-size:50px;
+
+
+    font-weight:bold;
+
+
+
+    text-shadow:
+
+    0 0 15px #00ff00;
+
+
+
+    animation:
+
+    blink 1s infinite;
+
+
+}
+
+
+
+
+@keyframes blink {
+
+
+    0%,
+    45% {
+
+
+        opacity:1;
+
+
+    }
+
+
+    50%,
+    100% {
+
+
+        opacity:0;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/*
+========================
+ SEGÉD
+========================
+*/
+
+
+.dead {
+
+
+    animation:
+
+    shake .3s;
+
+
+}
+
+
+
+@keyframes shake {
+
+
+    0%{
+        transform:translateX(0);
+    }
+
+
+    25%{
+        transform:translateX(-10px);
+    }
+
+
+    50%{
+        transform:translateX(10px);
+    }
+
+
+    100%{
+        transform:translateX(0);
+    }
+
+
+}
+
+.falling {
+
+    color:white;
+
+}
+
+#player {
+
+    transform:scale(2.0);
+
+    transform-origin:
+    bottom center;
+
+}
+
+
+#end-video {
+    margin-top: 20px;
+    max-height: 60vh; /* Gondoskodik róla, hogy ne lógjon ki a képernyőről */
+    border: 5px solid white;
+}

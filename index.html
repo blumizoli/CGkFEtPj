@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Csaba időutazása</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+<div id="game">
+
+
+    <!-- FELSŐ IKONSOR -->
+
+    <div id="topbar">
+
+
+        <div id="level-icons">
+
+
+            <div class="level-icon">
+                <img src="assets/icon/01.png">
+            </div>
+
+
+            <div class="level-icon">
+                <img src="assets/icon/02.png">
+            </div>
+
+
+            <div class="level-icon">
+                <img src="assets/icon/03.png">
+            </div>
+
+
+            <div class="level-icon">
+                <img src="assets/icon/04.png">
+            </div>
+
+
+            <div class="level-icon">
+                <img src="assets/icon/05.png">
+            </div>
+
+
+            <div class="level-icon">
+                <img src="assets/icon/06.png">
+            </div>
+
+
+        </div>
+
+
+
+        <div id="counter"></div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- JÁTÉKTÉR -->
+
+
+    <div id="world">
+
+
+
+        <div id="objects"></div>
+
+
+
+
+
+        <!-- KARAKTER -->
+
+
+        <div id="player">
+
+
+            <div id="body"></div>
+
+
+            <img id="head"
+                 src="assets/figure/csaba.png">
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- POPUP -->
+
+
+    <div id="popup">
+
+        <div id="popup-text"></div>
+
+    </div>
+
+
+
+
+
+
+
+<!-- VÉGSŐ KÉPERNYŐ -->
+<div id="ending">
+    <div id="birthday-message">
+        Gratulálok Csaba!<br>           
+        Visszajutottál a jelenbe!
+    </div>
+
+    <!-- Cserélje le a korábbi div-et erre a videóra -->
+    <video id="end-video" width="720" height="1280" style="display:none;">
+        <source src="assets/video/HB.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+
+
+
+
+
+    <!-- ÁTMENET -->
+
+
+    <div id="fade"></div>
+
+
+
+
+
+    <audio id="music"
+           loop></audio>
+
+
+
+
+</div>
+
+
+
+
+<script src="game.js"></script>
+
+
+</body>
+
+
+</html>
