@@ -40,7 +40,7 @@ const levels = [
     music:"assets/music/01.mp3",
     item:"⭐",
     danger:"☄️",
-    need:1,
+    need:3,
     success:"Gratulálok!<br>Kívánhatsz!"
 },
 
@@ -49,7 +49,7 @@ const levels = [
     music:"assets/music/02.mp3",
     item:"∫",
     danger:"📐",
-    need:1,
+    need:4,
     success:"Megvan a kettes alá!<br>Irány a kocsma!"
 },
 
@@ -58,7 +58,7 @@ const levels = [
     music:"assets/music/03.mp3",
     item:"🍺",
     danger:"🥃",
-    need:1,
+    need:5,
     success:"Siess!!!<br>5 perc és indul a 956-os!"
 },
 
@@ -67,7 +67,7 @@ const levels = [
     music:"assets/music/04.mp3",
     item:"20",
     danger:"🤮",
-    need:1,
+    need:7,
     success:"A következő megálló...<br>Borsó utca!"
 },
 
@@ -76,7 +76,7 @@ const levels = [
     music:"assets/music/05.mp3",
     item:"⭕",
     danger:"🌊",
-    need:1,
+    need:8,
     success:"Pihenj matróz!"
 },
 
@@ -85,7 +85,7 @@ const levels = [
     music:"assets/music/06.mp3",
     item:"🔧",
     danger:"⚙️",
-    need:1,
+    need:10,
     success:"Hurrá! Van víz!"
 }
 
